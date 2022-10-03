@@ -2,16 +2,6 @@
 
 // e. Confirmar email: Mismo formato y además debe coincidir con el rellenado anteriormente, va a servir de usuario en el login. Se trata de un campo obligatorio.
 
-class FormularioEmail {
-    constructor(email, confirmarEmail) {
-        this.email = email;
-        this.confirmarEmail = confirmarEmail;
-
-    }
-}
-
-var email = '';
-var confirmarEmail = '';
 
 function valoresEmail() {
     email = document.querySelector('#email').value;
@@ -45,7 +35,7 @@ function revisarEmail() {
 
 function crearEmail() {
     valoresEmail();
-    if(email != '' || confirmarEmail != ''){
+    if(email != '' && confirmarEmail != ''){
         revisarEmail();
     }
 }
