@@ -1,7 +1,6 @@
 //comprobaciones intereses
 function separarIntereses(sentence){
     var i = 0;
-    var words = 0;
     var sentenceArray = [];
     var word = "";
 
@@ -136,14 +135,6 @@ function password(){
 
 // e. Confirmar email: Mismo formato y además debe coincidir con el rellenado anteriormente, va a servir de usuario en el login. Se trata de un campo obligatorio.
 
-class FormularioEmail {
-    constructor(email, confirmarEmail) {
-        this.email = email;
-        this.confirmarEmail = confirmarEmail;
-
-    }
-}
-
 var email = '';
 var confirmarEmail = '';
 
@@ -172,16 +163,11 @@ function revisarEmail() {
         alert('Por favor, introduzca el formato correcto: \n ejerciciogrupal@correoelectronico.com \n ejerciciogrupal@correoelectronico.es');
     } else if (email != confirmarEmail) {
         alert('Los emails introducidos no coinciden, por favor reviselos');
-    } else {
-        alert('se ha iniciado sesion correctamente')
-    }
+    } 
 }
 
 function crearEmail() {
     valoresEmail();
-    if(email != '' || confirmarEmail != ''){
-        revisarEmail();
-    }
 }
 
 function comprobaciones() {
@@ -191,6 +177,9 @@ function comprobaciones() {
     }
     if (!password()){
         alert("La contraseña no cumple con los requisitios de seguridad");
+    }
+    if(email != '' || confirmarEmail != ''){
+        revisarEmail();
     }
 }
 
@@ -256,3 +245,9 @@ function nombreApellido() {
 
 }
 
+function enviar(){
+    intereses();
+    password();
+    crearEmail();
+    comprobaciones();
+}
