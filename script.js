@@ -165,10 +165,10 @@ function revisarEmail() {
         }
     }
 
-    let busquedaCOM = email.includes('.com');
-    let busquedaEs = email.includes('.es');
+    //let busquedaCOM = email.includes('.com');
+    //let busquedaEs = email.includes('.es');
 
-    if (busquedaCOM == false && busquedaEs == false || (contadorA > 1 || contadorA == 0)) {
+    if (contadorA > 1 || contadorA == 0) {
         alert('Por favor, introduzca el formato correcto: \n ejerciciogrupal@correoelectronico.com \n ejerciciogrupal@correoelectronico.es');
     } else if (email != confirmarEmail) {
         alert('Los emails introducidos no coinciden, por favor reviselos');
@@ -196,7 +196,6 @@ function comprobaciones() {
 
 
 function vacio(valor) {
-
     if (valor == null) {
         return true;
     }
@@ -214,8 +213,6 @@ function soloLetras(valor) {
 function esNumero(letra){
     return letra >= 48 && letra <= 57;
 }
-
-
 
 
 // var nombre = "";
