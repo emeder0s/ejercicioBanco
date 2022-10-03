@@ -1,56 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Ejercico Banco</title>
     <script src="script.js"></script>
     <link rel="stylesheet" src="style.css">
 </head>
+
 <body>
     <h1>FORMULARIO DE CONTACTO</h1>
     <h3>Escribenos y nos pondremos en contacto lo antes posible.</h3>
     <div class="formularios">
-    
+
+        <label for="Dirección">Dirección</label><br>
+        <input type="text" id="direccion" placeholder="Introduce tu dirección"><br>
+
+        <label for="dni">DNI</label><br>
+        <input type="text" id="dni" maxlength="9" minlength="9" placeholder="Introduce tu DNI"><br>
+
+        <label for="nombre">Nombre<span class="obligatorio">*</span></label><br>
+        <input type="text" id="nombre" name="nombre_usuario" placeholder="Introduce tu nombre"><br>
+
+        <label for="apellidos">Apellidos<span class="obligatorio">*</span></label><br>
+        <input type="text" id="apellidos" name="apellidos usuario" placeholder="Introduce tus apellidos"><br>
 
 
-        <label for="Dirección">Dirección</label>
-        <input type="text" id="direccion" placeholder="Introduce tu dirección" >
-        <button onclick="direccion()">ENVIAR DIRECCIÓN</button>
 
-        <label for="dni">DNI</label>
-        <input type="text" id="dni" maxlength="9" minlength="9" placeholder="Introduce tu DNI">
-        <button onclick="dni()">ENVIAR DNI</button>
-   
-
-
-
-        <ul>
-            <li>
-                <label for="nombre">Nombre<span class="obligatorio">*</span></label><br>
-                <input type="text" id="nombre" name="nombre_usuario" placeholder="Introduce tu nombre"><br>
-            </li>
-            <li>
-                <label for="apellidos">Apellidos<span class="obligatorio">*</span></label><br>
-                <input type="text" id="apellidos" name="apellidos usuario"  placeholder="Introduce tus apellidos"><br>
-            </li>
-            <li>
-            
-            </li>
-        </ul>
-    
         <label for="email">Introduce tu Email</label><br>
         <input type="text" name="email" id="email">
         <br>
         <label for="confirmar-email">Confirmar Email</label><br>
-        <input type="text" name="confirmar-email" id="confirmar-email">
-        <label for="intereses">Intereses</label>
-        <input id="intereses"></input>
-        <label for="password">Password</label>
-        <input id="password"></input>
+        <input type="text" name="confirmar-email" id="confirmar-email"><br>
+        <label for="intereses">Intereses</label><br>
+        <input id="intereses"></input><br>
+        <label for="password">Password</label><br>
+        <input id="password"></input><br>
 
         <br>
 
         <button onclick="enviar()">Enviar</button>
 
 </body>
+
 </html>
