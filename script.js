@@ -1,26 +1,23 @@
-
-
-
+//Direccion
 function direccion() {
     console.log("estoy dentro")
     var dir = document.getElementById("direccion").value
     var arrayDir = separarDireccion(dir)
     if (dir.length == 0) {
-        alert("La direccción es una campo obligatorio")
+        alert("La direccción es un campo obligatorio")
     }else if(arrayDir.length != 7){
-        alert("La direccción está incompleta")
+        alert("La direccción está incompleta. El formato debe ser: \n 1: Tipo vía/ Nombre vía, \n 2: Número, \n 3: Resto de Datos (piso, portal...etc), \n 4: CP, \n 5:Población \n 6: País")
     } else {
-        var tipCalle = tipoCalle(arrayDir[0])
-        console.log(arrayDir[4])
-        var codPostal = codigoPostal(arrayDir[4])
+        var tipCalle = tipoCalle(arrayDir[0]);
+        console.log(arrayDir[0]);
+        console.log(arrayDir[4]);
+        var codPostal = codigoPostal(arrayDir[4]);
         if (tipCalle && codPostal) {
             alert("La dirección está bien")
         } else {
             alert("La dirección está mal")
         }
     }
-
-
 }
 
 
@@ -39,7 +36,7 @@ function tipoCalle(calle) {
         default:
 
     }
-    return validation
+    return validation;
 }
 
 
@@ -64,13 +61,6 @@ function codigoPostal(codigo) {
 
 }
 
-
-
-
-
-
-
-
 function separarDireccion(sentence) {
 
     var i = 0;
@@ -91,9 +81,7 @@ function separarDireccion(sentence) {
 
 }
 
-
-
-
+//DNI
 function cogeNumero(dni) {
     var num = ""
     for (let i = 0; i <= dni.length - 2; i++) {
@@ -103,8 +91,6 @@ function cogeNumero(dni) {
     return num
 }
 
-
-
 function joinCasero(letras) {
     var cadena = ""
     for (let i = 0; i < letras.length; i++) {
@@ -113,8 +99,6 @@ function joinCasero(letras) {
     }
     return cadena
 }
-
-
 
 function dni() {
 
@@ -138,15 +122,9 @@ function dni() {
         var conjunto = letras.charAt(resto);//Conversión de letra en una cadena string para que confirme que la letra es la correcta.
 
 
-        if (letra == conjunto) {
-
-            alert("El dni es correcto");
-        }
-        else {
+        if (letra != conjunto) {
             alert("El dni es incorrecto");
         }
-
-
     }
 
 
@@ -285,12 +263,7 @@ function password(){
 }
 
 
-// d. Email: Formato correcto: dirección(puede admitir puntos y guiones bajos)@nombreDominio.RestoDominio. Se trata de un campo obligatorio.
-
-// e. Confirmar email: Mismo formato y además debe coincidir con el rellenado anteriormente, va a servir de usuario en el login. Se trata de un campo obligatorio.
-
-var email = '';
-var confirmarEmail = '';
+// Email
 
 function valoresEmail() {
     email = document.querySelector('#email').value;
@@ -314,7 +287,7 @@ function revisarEmail() {
     //let busquedaEs = email.includes('.es');
 
     if (contadorA > 1 || contadorA == 0) {
-        alert('Por favor, introduzca el formato correcto: \n ejerciciogrupal@correoelectronico.com \n ejerciciogrupal@correoelectronico.es');
+        alert('Por favor, introduzca el formato correcto: \n * ejerciciogrupal@correoelectronico.com \n * ejerciciogrupal@correoelectronico.es');
     } else if (email != confirmarEmail) {
         alert('Los emails introducidos no coinciden, por favor reviselos');
     } 
@@ -324,10 +297,11 @@ function crearEmail() {
     valoresEmail();
 }
 
+//Comprobaciones: Nombre, Apellidos y Email
 function comprobaciones() {
     nombreApellido();
     if (intereses() ==0){
-        alert("Ningún intererés es correcto");
+        alert("Introduzca uno de los siguientes intereses: \n - mercado inmobilario \n - bolsa \n - bienes estatales");
     }
     if (!password()){
         alert("La contraseña no cumple con los requisitios de seguridad");
@@ -337,7 +311,7 @@ function comprobaciones() {
     }
 }
 
-
+//Nombre y Apellidos
 function vacio(valor) {
     if (valor == null) {
         return true;
@@ -356,10 +330,6 @@ function soloLetras(valor) {
 function esNumero(letra){
     return letra >= 48 && letra <= 57;
 }
-
-
-// var nombre = "";
-// var apellido = "";
 
 function nombreApellido() {
     // nombre = document.getElementById("nombre").innerText;
@@ -403,6 +373,8 @@ function enviar(){
     intereses();
     password();
     crearEmail();
+    direccion();
+    dni();
     comprobaciones();
 }
 //Fusionado
