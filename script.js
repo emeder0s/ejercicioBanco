@@ -1,6 +1,5 @@
 //Direccion
 function direccion() {
-    console.log("estoy dentro")
     var dir = document.getElementById("direccion").value
     var arrayDir = separarDireccion(dir)
     if (dir.length == 0) {
@@ -9,8 +8,6 @@ function direccion() {
         alert("La direccción está incompleta. El formato debe ser: \n 1: Tipo vía/ Nombre vía, \n 2: Número, \n 3: Resto de Datos (piso, portal...etc), \n 4: CP, \n 5:Población \n 6: País")
     } else {
         var tipCalle = tipoCalle(arrayDir[0]);
-        console.log(arrayDir[0]);
-        console.log(arrayDir[4]);
         var codPostal = codigoPostal(arrayDir[4]);
         if (tipCalle && codPostal) {
             alert("La dirección está bien")
@@ -37,11 +34,6 @@ function tipoCalle(calle) {
 
     }
     return validation;
-}
-
-
-function esNumero(letra) {
-    return letra >= 48 && letra <= 57;
 }
 
 function codigoPostal(codigo) {
@@ -298,18 +290,18 @@ function crearEmail() {
 }
 
 //Comprobaciones: Nombre, Apellidos y Email
-function comprobaciones() {
-    nombreApellido();
-    if (intereses() ==0){
-        alert("Introduzca uno de los siguientes intereses: \n - mercado inmobilario \n - bolsa \n - bienes estatales");
-    }
-    if (!password()){
-        alert("La contraseña no cumple con los requisitios de seguridad");
-    }
-    if(email != '' || confirmarEmail != ''){
-        revisarEmail();
-    }
-}
+// function comprobaciones() {
+//     nombreApellido();
+//     if (intereses() ==0){
+//         alert("Introduzca uno de los siguientes intereses: \n - mercado inmobilario \n - bolsa \n - bienes estatales");
+//     }
+//     if (!password()){
+//         alert("La contraseña no cumple con los requisitios de seguridad");
+//     }
+//     if(email != '' || confirmarEmail != ''){
+//         revisarEmail();
+//     }
+// }
 
 //Nombre y Apellidos
 function vacio(valor) {
@@ -370,12 +362,19 @@ function nombreApellido() {
 }
 
 function enviar(){
-    intereses();
-    password();
+    nombreApellido();
+    if (intereses() ==0){
+        alert("Introduzca uno de los siguientes intereses: \n - mercado inmobilario \n - bolsa \n - bienes estatales");
+    }
+    if (!password()){
+        alert("La contraseña no cumple con los requisitios de seguridad");
+    }
+    if(email != '' || confirmarEmail != ''){
+        revisarEmail();
+    }
     crearEmail();
     direccion();
     dni();
-    comprobaciones();
 }
 //Fusionado
 

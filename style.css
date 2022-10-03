@@ -1,0 +1,47 @@
+body {
+    margin: 0 auto;
+    background: #a4bfc6;
+    color: rgb(34, 34, 34);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+h1{
+    background: white;
+    color: #393972;
+    font-family: fantasy;
+}
+
+button{
+ background: #393972;
+ color:white;
+ border-radius: 5px;
+ border: 1px solid #242449;
+ padding: 3px 5px;
+}
+
+button:hover{
+    background: #242449;
+    border: 1px solid #393972;
+    cursor: pointer;
+ }
+
+ input{
+    margin-bottom: 8px;
+    border-radius: 5px;
+    padding: 3px 5px;
+    border: 1px solid rgb(34, 34, 34) ;
+ }
+
+ span.obligatorio{
+    font-size: x-small;
+ }
+
+ p{
+    font-size: small;
+ }
+
+ label{
+    font-size: smaller;
+    font-weight: bold;
+ }
