@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Ejercico Banco</title>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" src="style.css">
 </head>
 <body>
-    <form>
+    <h1>FORMULARIO DE CONTACTO</h1>
+    <h3>Escribenos y nos pondremos en contacto lo antes posible.</h3>
+    <div class="formularios">
+    
+        <ul>
+            <li>
+                <label for="nombre">Nombre<span class="obligatorio">*</span></label><br>
+                <input type="text" id="nombre" name="nombre_usuario" placeholder="Introduce tu nombre"><br>
+            </li>
+            <li>
+                <label for="apellidos">Apellidos<span class="obligatorio">*</span></label><br>
+                <input type="text" id="apellidos" name="apellidos usuario"  placeholder="Introduce tus apellidos"><br>
+            </li>
+            <li>
+            <button onclick="comprobaciones()">Comprobar</button>
+            </li>
+        </ul>
+    
+        <label for="email">Introduce tu Email</label><br>
+        <input type="text" name="email" id="email">
+        <br>
+        <label for="confirmar-email">Confirmar Email</label><br>
+        <input type="text" name="confirmar-email" id="confirmar-email">
         <label for="intereses">Intereses</label>
         <input id="intereses"></input>
-
         <label for="password">Password</label>
         <input id="password"></input>
 
-        <button type="button" onclick="comprobaciones()">Enviar</button>
-    </form>
+        <br>
+        <button onclick="crearEmail()">Enviar</button>
+   
 </body>
 </html>
