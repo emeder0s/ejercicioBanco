@@ -251,3 +251,4 @@ function enviar(){
     crearEmail();
     comprobaciones();
 }
+//Fusionado
