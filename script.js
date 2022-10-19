@@ -30,10 +30,12 @@ function tipoCalle(calle) {
         case "paseo":
             validation = true
             break;
-        default:
-
     }
     return validation;
+}
+//Otra forma de hacer lo de antes
+function tipoVia (via){
+return via == 'avenida' || via == 'calle' || via == 'paseo';
 }
 
 function codigoPostal(codigo) {
